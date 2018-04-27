@@ -49,6 +49,23 @@ namespace Polymorphism
         }
     }
 
+    public class BaseClass
+    {
+        public string DoWork() { return "In baseclass"; }
+        public virtual string WorkProperty
+        {
+            get { return "Baseclass WorkProperty"; }
+        }
+    }
+    public class DerivedClass : BaseClass
+    {
+        public new string DoWork() { return "In derived class"; }
+        public override string WorkProperty
+        {
+            get { return "Derived class' WorkProperty"; }
+        }
+    }
+
     class Program
     {
         static void Main(string[] args)
@@ -74,6 +91,9 @@ namespace Polymorphism
                 shape.Draw();
             }
 
+            BaseClass test = new DerivedClass(); // Baseclass inherits from derived class
+            Console.WriteLine($"Derived: {test.WorkProperty}");
+            Console.WriteLine($"Derived: {test.DoWork()}");
             // Keep the console open in debug mode.
             Console.WriteLine("Press any key to exit.");
             Console.ReadKey();
