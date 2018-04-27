@@ -91,9 +91,9 @@ namespace Polymorphism
                 shape.Draw();
             }
 
-            BaseClass test = new DerivedClass(); // Baseclass inherits from derived class
-            Console.WriteLine($"Derived: {test.WorkProperty}");
-            Console.WriteLine($"Derived: {test.DoWork()}");
+            BaseClass test = new DerivedClass(); // Baseclass test inherits from derived class
+            Console.WriteLine($"Is in: {test.WorkProperty}");
+            Console.WriteLine($"Is in: {test.DoWork()}");
             // Keep the console open in debug mode.
             Console.WriteLine("Press any key to exit.");
             Console.ReadKey();
