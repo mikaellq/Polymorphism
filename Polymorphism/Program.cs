@@ -66,6 +66,22 @@ namespace Polymorphism
         }
     }
 
+    class Base_Class
+    {
+        public void Method1()
+        {
+            Console.WriteLine("Base - Method1");
+        }
+    }
+
+    class Derived_Class : Base_Class
+    {
+        public void Method2()
+        {
+            Console.WriteLine("Derived - Method2");
+        }
+    }
+
     class Program
     {
         static void Main(string[] args)
@@ -94,6 +110,16 @@ namespace Polymorphism
             BaseClass test = new DerivedClass(); // Baseclass test inherits from derived class
             Console.WriteLine($"Is in: {test.WorkProperty}");
             Console.WriteLine($"Is in: {test.DoWork()}");
+
+            Base_Class bc = new Base_Class();
+            Derived_Class dc = new Derived_Class();
+            Base_Class bcdc = new Derived_Class();
+
+            bc.Method1();
+            dc.Method1();
+            dc.Method2();
+            bcdc.Method1();
+
             // Keep the console open in debug mode.
             Console.WriteLine("Press any key to exit.");
             Console.ReadKey();
